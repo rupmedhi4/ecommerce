@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createContext } from "react";
 
 export const AppContext = createContext();
@@ -30,11 +30,28 @@ export default function AppContextProvider({children}){
         price: 100,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
         }
-        ]
-        
+        ];
+    
+    const [cartArr, setCartArr] = useState([{}])
+    const [portal, setPortal] = useState(false)
+
+    const addHandler = (id)=>{
+     const arr = productsArr.filter((product)=>{
+         return product.id === id
+        })
+    setCartArr([...cartArr,arr])
+    console.log(cartArr)
+    }
+
+ 
 
     const value = {
-        productsArr
+        productsArr,
+        addHandler,
+        cartArr,
+        portal,
+        setPortal
+     
     }
 
     return (

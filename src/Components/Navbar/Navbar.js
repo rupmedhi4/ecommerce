@@ -1,7 +1,14 @@
-import React from 'react'
-import './Navbar.css'
+import React, { useContext } from 'react';
+import './Navbar.css';
+import { AppContext } from '../Context/AppContext';
+import App from '../../App';
 
-export default function Navbar() {
+export default function Navbar({setPortal, portal}) {
+
+    const {cartArr} = useContext(AppContext)
+    const modalHandler = ()=>{
+        setPortal(!portal)
+    }
     return (
         <nav className='container'>
             <ul className='ul'>
@@ -10,7 +17,7 @@ export default function Navbar() {
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Contact us</a></li>
             </ul>
-            <button className='cartBtn'>Cart</button>
+            <button className='cartBtn' onClick={modalHandler}>Cart {cartArr.length}</button>
         </nav>
-    )
+    );
 }

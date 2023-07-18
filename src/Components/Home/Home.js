@@ -4,7 +4,7 @@ import { AppContext } from '../Context/AppContext'
 
 export default function Home() {
 
-    const {productsArr} = useContext(AppContext)
+    const {productsArr,addHandler} = useContext(AppContext)
 
     return (
         <div >
@@ -25,7 +25,7 @@ export default function Home() {
                             </div>
                             <div className='cart-btn'>
                                 <span>${item.price}</span>
-                                <button>Add to cart</button>
+                                <button onClick={()=>addHandler(item.id)}>Add to cart</button>
                             </div>
                         </div>
 
