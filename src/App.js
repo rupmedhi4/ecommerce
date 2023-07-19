@@ -13,7 +13,7 @@ const {setPortal,portal} = useContext(AppContext)
   return (
     <AppContextProvider>  
       <Navbar portal={portal} setPortal = {setPortal}/>
-            {portal ?<Portal/>:null}  
+            {portal ?<Portal portal={portal} setPortal = {setPortal}/>:null}  
       <Home />
       <Footer />
     </AppContextProvider>

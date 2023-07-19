@@ -32,18 +32,18 @@ export default function AppContextProvider({children}){
         }
         ];
     
-    const [cartArr, setCartArr] = useState([{}])
+    const [cartArr, setCartArr] = useState([])
     const [portal, setPortal] = useState(false)
 
     const addHandler = (id)=>{
-     const arr = productsArr.filter((product)=>{
+        const randomId = Math.random();
+        const arr = productsArr.find((product)=>{
          return product.id === id
         })
-    setCartArr([...cartArr,arr])
-    console.log(cartArr)
+        setCartArr((prevCartArr) => [...prevCartArr, { ...arr, id: randomId }]);
     }
 
- 
+ console.log(cartArr)
 
     const value = {
         productsArr,

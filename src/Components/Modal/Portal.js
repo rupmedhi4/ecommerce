@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './Portal.css';
 import Modal from './Modal';
 
-export default function Portal() {
+export default function Portal({portal,setPortal}) {
   useEffect(() => {
     document.body.classList.add('modal-open');
 
@@ -15,7 +15,7 @@ export default function Portal() {
   return ReactDOM.createPortal(
     <div className='modal-overlay'>
       <div className='modal-content'>
-        <Modal/>
+        <Modal portal={portal} setPortal = {setPortal}/>
       </div>
     </div>,
     document.getElementById("modal")

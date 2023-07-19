@@ -18,7 +18,7 @@ export default function Home() {
                     <div key={index} className='cart'>
                         <div>
                             <div className='cart-album'>
-                                <span >Album {index + 1}</span>
+                                <span > {item.title}</span>
                             </div>
                             <div>
                                 <img src={item.imageUrl} alt='img' />
