@@ -6,7 +6,7 @@ import { useContext } from 'react';
 
 export default function Modal({setPortal,portal}) {
 
-  const {cartArr} = useContext(AppContext)
+  const {cartArr,removeHandler} = useContext(AppContext)
   return (
     <div className='main__container'>
         <div className='icon'>
@@ -29,7 +29,7 @@ export default function Modal({setPortal,portal}) {
               <div className='cart__price'>{item.price}</div>
               <div className='btn_div'>
                   <span>1</span>
-                  <button className='cart__btn'>Remove</button>
+                  <button className='cart__btn' onClick={()=>removeHandler(item.id)}>Remove</button>
               </div>
           </div>
            ))}
@@ -40,7 +40,7 @@ export default function Modal({setPortal,portal}) {
       </div>
      
      <div className='purchaseBtn'>
-        <button className='btn'>PURCHASE</button>
+        <button className='btn' >PURCHASE</button>
      </div>
       
     </div>

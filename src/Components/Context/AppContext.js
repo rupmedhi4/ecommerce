@@ -57,6 +57,12 @@ export default function AppContextProvider({ children }) {
 
     }
 
+    const removeHandler = (id)=>{
+        const filteredArr = cartArr.filter((item)=> item.id != id)
+        setCartArr([...filteredArr])
+        alert("Item Remove succesfully")
+    }
+
 
     const value = {
         productsArr,
@@ -64,6 +70,7 @@ export default function AppContextProvider({ children }) {
         cartArr,
         portal,
         setPortal,
+        removeHandler
         
 
     }
