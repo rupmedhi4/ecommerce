@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 
 export const AppContext = createContext();
@@ -34,7 +34,16 @@ export default function AppContextProvider({ children }) {
 
     const [cartArr, setCartArr] = useState([])
     const [portal, setPortal] = useState(false)
+    const [totalPrice, setTotalPrice] = useState(0)
 
+    useEffect(() => {
+      let totalPriceSum = 0;
+      cartArr.map((data) => {
+        totalPriceSum += data.price;
+      });
+      setTotalPrice(totalPriceSum);
+    }, [cartArr]);
+    
 
     const addHandler = (id) => {
         if (cartArr.length === 0) {
@@ -70,7 +79,8 @@ export default function AppContextProvider({ children }) {
         cartArr,
         portal,
         setPortal,
-        removeHandler
+        removeHandler,
+        totalPrice
         
 
     }
