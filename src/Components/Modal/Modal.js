@@ -20,11 +20,10 @@ export default function Modal({setPortal,portal}) {
         <li>QUANTITY</li>
       </ul>
       <div className = 'main__cart'>
-        {cartArr.map((item)=>(
-          <>
-           <div className='modal__data'>
+        {cartArr.map((item, index)=>(
+           <div key={index} className='modal__data'>
             <div className='img__div'>
-              <img src={item.imageUrl} className='cart__img'/>
+              <img className='cart__img' src={item.imageUrl} />
               <span>{item.title}</span>
             </div>
               <div className='cart__price'>{item.price}</div>
@@ -33,7 +32,6 @@ export default function Modal({setPortal,portal}) {
                   <button className='cart__btn'>Remove</button>
               </div>
           </div>
-          </>
            ))}
       </div>
       <hr />

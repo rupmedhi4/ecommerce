@@ -4,8 +4,10 @@ import { AppContext } from '../Context/AppContext'
 
 export default function Home() {
 
-    const {productsArr,addHandler} = useContext(AppContext)
+    const {productsArr,addHandler, cartArr} = useContext(AppContext)
 
+   
+    
     return (
         <div >
             <div className='header'>
@@ -39,3 +41,4 @@ export default function Home() {
         </div>
     )
 }
+
