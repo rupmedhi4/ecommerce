@@ -11,6 +11,8 @@
 .ul {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-left: 9rem;
     list-style: none;
     flex-grow: 1; /* Add flex-grow property */
   }
@@ -22,6 +24,9 @@
     text-decoration: none; 
     color: #FFFFFF;
     font-weight: bold;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    font-size: 18px;
 }
 .cartBtn {
     background: #f2c94c;

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
-import './Home.css'
+import './Store.css'
 import { AppContext } from '../Context/AppContext'
 
-export default function Home() {
+export default function Store() {
 
     const {productsArr,addHandler, cartArr} = useContext(AppContext)
 

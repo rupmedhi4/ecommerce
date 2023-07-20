@@ -71,7 +71,11 @@ export default function AppContextProvider({ children }) {
         setCartArr([...filteredArr])
         alert("Item Remove succesfully")
     }
-
+    
+    const clearCart = ()=>{
+        setCartArr([])
+        alert("thanks for purshase")
+    }
 
     const value = {
         productsArr,
@@ -80,7 +84,8 @@ export default function AppContextProvider({ children }) {
         portal,
         setPortal,
         removeHandler,
-        totalPrice
+        totalPrice,
+        clearCart
         
 
     }
