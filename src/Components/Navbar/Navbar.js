@@ -2,13 +2,16 @@ import React, { useContext } from 'react';
 import './Navbar.css';
 import { AppContext } from '../Context/AppContext';
 import App from '../../App';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function Navbar({setPortal, portal}) {
+export default function Navbar({portal, setPortal}) {
 
     const {cartArr} = useContext(AppContext)
+    const navigate = useNavigate();
+
     const modalHandler = ()=>{
         setPortal(!portal)
+        navigate("/cart")
     }
     return (
         <nav className='container'>

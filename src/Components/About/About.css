@@ -1,4 +1,4 @@
-h2{
+.heading{
     text-align: center;
     padding-bottom: 65px;
     font-size: 100px;
@@ -28,7 +28,7 @@ h2{
     margin-left: 8rem;
 }
 
-.p{
+.img_div_p{
     margin: 20px;
     text-align: justify;
     color: #777;

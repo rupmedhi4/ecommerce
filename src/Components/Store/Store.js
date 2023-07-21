@@ -1,12 +1,16 @@
 import React, { useContext } from 'react'
 import './Store.css'
 import { AppContext } from '../Context/AppContext'
+import { useNavigate } from 'react-router';
 
-export default function Store() {
-
+export default function Store({portal,setPortal}) {
+    const navigate = useNavigate();
     const {productsArr,addHandler, cartArr} = useContext(AppContext)
 
-   
+   const showCart = ()=>{
+    setPortal(!portal)
+    navigate("/cart")
+   }
     
     return (
         <div >
@@ -34,7 +38,7 @@ export default function Store() {
                     </div>
                 ))}
             </div>
-            <button className='see-all-cart-btn'>See the cart</button>
+            <button className='see-all-cart-btn' onClick={showCart}>See the cart</button>
 
 
 

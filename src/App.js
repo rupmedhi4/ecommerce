@@ -13,19 +13,22 @@ import About from './Components/About/About';
 
 export default function App() {
   const { setPortal, portal } = useContext(AppContext)
-
-
-
+  
   return (
     <>
     <AppContextProvider>
       <BrowserRouter>
         <Navbar portal={portal} setPortal={setPortal} />
-        <Routes>
+        {portal && (
+         
+              <Store />
+          )}
+ 
+        <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={portal ? <Portal portal={portal} setPortal={setPortal} /> : null} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/store" element={<Store portal={portal} setPortal={setPortal}/>} />
         </Routes>
       </BrowserRouter>
       <Footer />

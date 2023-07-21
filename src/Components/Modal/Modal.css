@@ -39,7 +39,7 @@ li{
   margin-top: 3rem;   
 }
 
-.btn{
+.main_btn{
     background: #56CCF2;
     color: white;
     font-size: 1.2rem;
@@ -48,6 +48,7 @@ li{
     border-radius: 8%;
     padding: 12px;
     cursor: pointer;
+    width: 8rem;
 }
 
 .modal__data{

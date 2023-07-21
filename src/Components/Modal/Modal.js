@@ -3,14 +3,22 @@ import { TiDeleteOutline } from 'react-icons/ti';
 import './Modal.css'
 import { AppContext } from '../Context/AppContext';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 
 export default function Modal({setPortal,portal}) {
 
+  const navigate = useNavigate();
   const {cartArr,removeHandler, totalPrice,clearCart} = useContext(AppContext)
+
+
+  const navigateToHome= ()=>{
+     setPortal(false)
+     navigate("/")
+  }
   return (
     <div className='main__container'>
         <div className='icon'>
-             <TiDeleteOutline onClick={()=>setPortal(false)}/>
+             <TiDeleteOutline onClick={navigateToHome}/>
         </div>
      
       <h2 className='modal__cart'>CART</h2>
@@ -40,7 +48,7 @@ export default function Modal({setPortal,portal}) {
       </div>
      
      <div className='purchaseBtn'>
-        <button className='btn' onClick={clearCart} >PURCHASE</button>
+        <button className='main_btn' onClick={clearCart} >PURCHASE</button>
      </div>
       
     </div>

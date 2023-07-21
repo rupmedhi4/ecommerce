@@ -50,7 +50,7 @@ export default function Tours() {
                         <span style={{width:"12%"}}>{tour.date}</span>
                         <span style={{width:"25%", color:"#777"}}>{tour.place}</span>
                         <p style={{width:"53%", color:"#777"}}>{tour.description}</p>
-                        <button className='btn'>BUY TICKETS</button>
+                        <button className='tour_ticket_btn'>BUY TICKETS</button>
 
                     </div>
 
