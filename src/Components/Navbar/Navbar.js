@@ -20,7 +20,7 @@ export default function Navbar({setPortal, portal}) {
                 <Link to="store">Store</Link>
                 </li>
                 <li>
-                <Link to="/aboutus">About us</Link>
+                <Link to="/about">About us</Link>
                 </li>
             </ul>
             <button className='cartBtn' onClick={modalHandler}>Cart {cartArr.length}</button>
