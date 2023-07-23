@@ -41,3 +41,7 @@
    margin-right: 2%;
    cursor: pointer;
 }
+.btn__signup{
+    color: white;
+    text-decoration: none;
+}
