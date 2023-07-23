@@ -11,17 +11,17 @@ export default function Login() {
 
   const loginHandler = async (e) => {
     e.preventDefault();
-
     try {
       await signInWithEmailAndPassword(auth, email, password);
       alert('Login Successful');
+      navigate("/store")
     } catch (err) {
       alert(err)
     }
   };
 
   return (
-    <div className="login__card">
+    <div className="login__card ">
       <h1 className='cart__h1'>Log in</h1>
       <form className='input__form'>
         <div>

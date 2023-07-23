@@ -7,10 +7,11 @@ export default function Store({portal,setPortal}) {
     const navigate = useNavigate();
     const {productsArr,addHandler, cartArr} = useContext(AppContext)
 
-   const showCart = ()=>{
-    setPortal(!portal)
-    navigate("/cart")
-   }
+    const modalHandler = () => {
+        setPortal(!portal)
+        navigate("/cart")
+       
+    }
     
     return (
         <div >
@@ -38,7 +39,7 @@ export default function Store({portal,setPortal}) {
                     </div>
                 ))}
             </div>
-            <button className='see-all-cart-btn' onClick={showCart}>See the cart</button>
+            <button className='see-all-cart-btn' onClick={modalHandler}>See the cart</button>
 
 
 

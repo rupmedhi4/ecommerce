@@ -49,7 +49,6 @@ export default function App() {
         <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<PrivateRoutes user={user}  component={About} alt={Login} />}/>
-
           <Route path="/cart" element={portal ? <Portal portal={portal} setPortal={setPortal} /> : null} />
           <Route path="/store" element={<PrivateRoutes user={user} portal={portal} setPortal={setPortal} component={Store} alt={Login} />}/>
           <Route path="/login" element={<Login/>}/>

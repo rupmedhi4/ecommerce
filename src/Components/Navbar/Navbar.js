@@ -13,7 +13,8 @@ export default function Navbar({ portal, setPortal, user }) {
 
     const modalHandler = () => {
         setPortal(!portal)
-        navigate("/cart")
+        portal ?  navigate("/store") :  navigate("/cart")
+       
     }
 
     const loginHandler = () => {
@@ -26,7 +27,7 @@ export default function Navbar({ portal, setPortal, user }) {
     const logoutHandler = async ()=>{
         try{
            await signOut(auth)
-           navigate("/")
+           navigate("/Login")
            alert("Signout successfully")
         }catch(err){
           alert(err)

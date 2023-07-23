@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
+import { useNavigate } from "react-router";
 
 export const AppContext = createContext();
 
@@ -77,6 +78,8 @@ export default function AppContextProvider({ children }) {
         alert("thanks for purshase")
     }
 
+  
+
     const value = {
         productsArr,
         addHandler,
@@ -85,7 +88,7 @@ export default function AppContextProvider({ children }) {
         setPortal,
         removeHandler,
         totalPrice,
-        clearCart
+        clearCart,
         
 
     }
