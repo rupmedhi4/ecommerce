@@ -21,7 +21,7 @@ export default function Signup() {
     try {
       await createUserWithEmailAndPassword(auth, email, password);
      alert('Account created successfully');
-     navigate("/Home")
+     navigate("/")
 
     } catch (err) {
       alert(err.message);
