@@ -18,9 +18,7 @@ import PrivateRoutes from './PrivateRoutes';
 
 
 export default function App() {
-  const { setPortal, portal } = useContext(AppContext)
-
-  const [user, setUser] = useState(null);
+  const { setPortal, portal,user, setUser } = useContext(AppContext)
 
 
   useEffect(() => {

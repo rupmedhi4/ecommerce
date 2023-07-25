@@ -9,10 +9,11 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-
+    const navigate = useNavigate();
 
   const signupHandler = async (e) => {
     e.preventDefault();
+
     if (password !== confirmPassword) {
       alert("Passwords don't match");
       return;
