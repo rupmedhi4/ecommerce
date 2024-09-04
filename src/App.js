@@ -31,7 +31,7 @@ export default function App() {
       }
     });
     return () => {
-      unsubscribe(); // Unsubscribe from the onAuthStateChanged listener
+      unsubscribe(); 
     };
   },[])
   

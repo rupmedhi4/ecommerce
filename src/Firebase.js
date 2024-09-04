@@ -4,13 +4,14 @@ import { getFirestore } from 'firebase/firestore';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCaKeop55zBfuN7UvC-JVuZBcZXtUrai8w",
-    authDomain: "ecommerce-site-b963d.firebaseapp.com",
-    projectId: "ecommerce-site-b963d",
-    storageBucket: "ecommerce-site-b963d.appspot.com",
-    messagingSenderId: "886872830683",
-    appId: "1:886872830683:web:6d090174adb03579bf52fe",
-    measurementId: "G-82T3C4KBKM"
+  apiKey: "AIzaSyCkIWyc1mXI50pP5hPTO91_GTwM8qSXyvs",
+  authDomain: "ecom-79978.firebaseapp.com",
+  databaseURL: "https://ecom-79978-default-rtdb.firebaseio.com",
+  projectId: "ecom-79978",
+  storageBucket: "ecom-79978.appspot.com",
+  messagingSenderId: "418127279983",
+  appId: "1:418127279983:web:e0ae43d07995fc10cbda9a",
+  measurementId: "G-STBWNCCHL4"
   };
 
 const app = initializeApp(firebaseConfig);

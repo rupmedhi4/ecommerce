@@ -11,6 +11,7 @@ export default function Navbar({ portal, setPortal, user }) {
     const { cartArr } = useContext(AppContext)
     const navigate = useNavigate();
 
+
     const modalHandler = () => {
         setPortal(!portal)
         portal ?  navigate("/store") :  navigate("/cart")
@@ -62,3 +63,8 @@ export default function Navbar({ portal, setPortal, user }) {
         </nav>
     );
 }
+
+
+
+
+

@@ -3,16 +3,16 @@ import './Store.css'
 import { AppContext } from '../Context/AppContext'
 import { useNavigate } from 'react-router';
 
-export default function Store({portal,setPortal}) {
+export default function Store({ portal, setPortal }) {
     const navigate = useNavigate();
-    const {productsArr,addHandler, cartArr} = useContext(AppContext)
+    const { productsArr, addHandler, cartArr } = useContext(AppContext)
 
     const modalHandler = () => {
         setPortal(!portal)
         navigate("/cart")
-       
+
     }
-    
+
     return (
         <div >
             <div className='header'>
@@ -32,7 +32,7 @@ export default function Store({portal,setPortal}) {
                             </div>
                             <div className='cart-btn'>
                                 <span>${item.price}</span>
-                                <button onClick={()=>addHandler(item.id)}>Add to cart</button>
+                                <button onClick={() => addHandler(item.id)}>Add to cart</button>
                             </div>
                         </div>
 

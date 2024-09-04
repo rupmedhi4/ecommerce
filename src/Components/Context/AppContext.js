@@ -8,30 +8,30 @@ export const AppContext = createContext();
 export default function AppContextProvider({ children }) {
 
     const productsArr = [
-      {
-        id: 1,
-        title: 'Colors',
-        price: 100,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    },
-    {
-        id: 2,
-        title: 'Black and white Colors',
-        price: 50,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    },
-    {
-        id: 3,
-        title: 'Yellow and Black Colors',
-        price: 70,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    },
-    {
-        id: 4,
-        title: 'Blue Color',
-        price: 100,
-        imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
-    }
+        {
+            id: 1,
+            title: 'Colors',
+            price: 100,
+            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
+        },
+        {
+            id: 2,
+            title: 'Black and white Colors',
+            price: 50,
+            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
+        },
+        {
+            id: 3,
+            title: 'Yellow and Black Colors',
+            price: 70,
+            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
+        },
+        {
+            id: 4,
+            title: 'Blue Color',
+            price: 100,
+            imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
+        }
     ];
 
     const [cartArr, setCartArr] = useState([]);
@@ -41,14 +41,14 @@ export default function AppContextProvider({ children }) {
 
     const user1 = auth.currentUser;
 
-  useEffect(() => {
-  if (cartArr.length === 0) {
-    setTotalPrice(0);
-  } else {
-    const totalPriceSum = cartArr.reduce((accumulator, data) => accumulator + data.price, 0);
-    setTotalPrice(totalPriceSum);
-  }
-}, [cartArr]);
+    useEffect(() => {
+        if (cartArr.length === 0) {
+            setTotalPrice(0);
+        } else {
+            const totalPriceSum = cartArr.reduce((accumulator, data) => accumulator + data.price, 0);
+            setTotalPrice(totalPriceSum);
+        }
+    }, [cartArr]);
 
 
     const addHandler = async (id) => {
@@ -93,7 +93,7 @@ export default function AppContextProvider({ children }) {
                 }
             });
 
-            return () => unsubscribe(); // Cleanup the listener when the component unmounts
+            return () => unsubscribe(); 
         }
     }, [user1]);
 
@@ -106,9 +106,9 @@ export default function AppContextProvider({ children }) {
     };
 
     const clearCart = async () => {
-      const cartRef = doc(db, 'userdata', user1.uid);
-      await setDoc(cartRef, { cart: [] });
-      alert("Thanks for the purchase");
+        const cartRef = doc(db, 'userdata', user1.uid);
+        await setDoc(cartRef, { cart: [] });
+        alert("Thanks for the purchase");
     };
 
     const value = {
